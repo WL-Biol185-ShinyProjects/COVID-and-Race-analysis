@@ -15,22 +15,25 @@ dashboardPage(
   dashboardBody(
     tabItems(
       # First tab content
-      tabItem(tabName = "Introduction",
+      tabItem(tabName = "dashboard",
               fluidRow(
                 box(plotOutput("plot1", height = 250)),
                 
                 box(
+<<<<<<< HEAD
                   title = "Covid",
+=======
+                  title = "Controls",
+>>>>>>> aec8b0a4211f66f96fc40d99f6594032cd861358
                   sliderInput("slider", "Number of observations:", 1, 100, 50)
                 )
               )
       ),
       
       # Second tab content
-      tabItem(tabName = "Cases & Deaths",
+      tabItem(tabName = "widgets",
               h2("Widgets tab content")
       )
     )
   )
 )
-
