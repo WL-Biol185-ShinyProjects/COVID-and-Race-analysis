@@ -2,6 +2,10 @@ library(shinydashboard)
 
 # Define server logic required to plot various variables with COVID cases and deaths
 function(input, output) {
+<<<<<<< HEAD
+
+  }
+=======
     set.seed(122)
     histdata <- rnorm(500)
     
@@ -10,3 +14,4 @@ function(input, output) {
       hist(data)
     })
   }
+>>>>>>> f11927d629a5fbcd353c2737987fef9bc47e98df
