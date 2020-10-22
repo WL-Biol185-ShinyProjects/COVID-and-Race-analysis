@@ -15,26 +15,9 @@ dashboardPage(
   ## Body content
   dashboardBody(
     tabItems(
-<<<<<<< HEAD
       tabItem("Introduction", "Introduction goes here"),
       tabItem("CasesDeaths", "graphs go here")
-=======
-      # First tab content
-      tabItem(tabName = "dashboard",
-              fluidRow(
-                box(plotOutput("plot1", height = 250)),
-                
-                box(
-<<<<<<< HEAD
-                  title = "Covid",
-=======
-                  title = "Controls",
->>>>>>> aec8b0a4211f66f96fc40d99f6594032cd861358
-                  sliderInput("slider", "Number of observations:", 1, 100, 50)
-                )
-              )
-      ),
->>>>>>> f11927d629a5fbcd353c2737987fef9bc47e98df
+
       
     )
   )
