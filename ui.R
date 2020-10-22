@@ -14,5 +14,5 @@ dashboardPage(
   ## Body content
   dashboardBody(
     
-    )
   )
+)
