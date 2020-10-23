@@ -1,5 +1,6 @@
 library(shinydashboard)
 #source pages here
+source("cases-and-deaths.R")
 
 dashboardPage(
   dashboardHeader(title = "COVID-19 Case Explorer"),
@@ -16,7 +17,8 @@ dashboardPage(
   dashboardBody(
     tabItems(
       tabItem("Introduction", "Introduction goes here"),
-      tabItem("CasesDeaths", "graphs go here")
+      tabItem("CasesDeaths", casesanddeaths)
+      
       
     )
   )
