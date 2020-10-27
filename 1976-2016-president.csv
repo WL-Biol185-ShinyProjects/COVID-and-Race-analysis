@@ -1,0 +1,103 @@
+year,state,state_po,state_fips,state_cen,state_ic,office,candidate,party,writein,candidatevotes,totalvotes,version,notes
+2016,Alabama,AL,1,63,41,US President,"Trump, Donald J.",republican,FALSE,1318255,2123372,20171015,NA
+2016,Alabama,AL,1,63,41,US President,"Clinton, Hillary",democrat,FALSE,729547,2123372,20171015,NA
+2016,Alaska,AK,2,94,81,US President,"Trump, Donald J.",republican,FALSE,163387,318608,20171015,NA
+2016,Alaska,AK,2,94,81,US President,"Clinton, Hillary",democrat,FALSE,116454,318608,20171015,NA
+2016,Arizona,AZ,4,86,61,US President,"Trump, Donald J.",republican,FALSE,1252401,2573165,20171015,NA
+2016,Arizona,AZ,4,86,61,US President,"Clinton, Hillary",democrat,FALSE,1161167,2573165,20171015,NA
+2016,Arkansas,AR,5,71,42,US President,"Trump, Donald J.",republican,FALSE,684872,1130635,20171015,NA
+2016,Arkansas,AR,5,71,42,US President,"Clinton, Hillary",democrat,FALSE,380494,1130635,20171015,NA
+2016,California,CA,6,93,71,US President,"Clinton, Hillary",democrat,FALSE,8753788,14181595,20171015,NA
+2016,California,CA,6,93,71,US President,"Trump, Donald J.",republican,FALSE,4483810,14181595,20171015,NA
+2016,Colorado,CO,8,84,62,US President,"Clinton, Hillary",democrat,FALSE,1338870,2780220,20171015,NA
+2016,Colorado,CO,8,84,62,US President,"Trump, Donald J.",republican,FALSE,1202484,2780220,20171015,NA
+2016,Connecticut,CT,9,16,1,US President,"Clinton, Hillary",democrat,FALSE,897572,1644920,20171015,NA
+2016,Connecticut,CT,9,16,1,US President,"Trump, Donald J.",republican,FALSE,673215,1644920,20171015,NA
+2016,Delaware,DE,10,51,11,US President,"Clinton, Hillary",democrat,FALSE,235603,441590,20171015,NA
+2016,Delaware,DE,10,51,11,US President,"Trump, Donald J.",republican,FALSE,185127,441590,20171015,NA
+2016,District of Columbia,DC,11,53,55,US President,"Clinton, Hillary",democrat,FALSE,282830,312575,20171015,NA
+2016,District of Columbia,DC,11,53,55,US President,"Trump, Donald J.",republican,FALSE,12723,312575,20171015,NA
+2016,Florida,FL,12,59,43,US President,"Trump, Donald J.",republican,FALSE,4617886,9420039,20171015,NA
+2016,Florida,FL,12,59,43,US President,"Clinton, Hillary",democrat,FALSE,4504975,9420039,20171015,NA
+2016,Georgia,GA,13,58,44,US President,"Trump, Donald J.",republican,FALSE,2089104,4114732,20171015,NA
+2016,Georgia,GA,13,58,44,US President,"Clinton, Hillary",democrat,FALSE,1877963,4114732,20171015,NA
+2016,Hawaii,HI,15,95,82,US President,"Clinton, Hillary",democrat,FALSE,266891,437664,20171015,NA
+2016,Hawaii,HI,15,95,82,US President,"Trump, Donald J.",republican,FALSE,128847,437664,20171015,NA
+2016,Idaho,ID,16,82,63,US President,"Trump, Donald J.",republican,FALSE,409055,690255,20171015,NA
+2016,Idaho,ID,16,82,63,US President,"Clinton, Hillary",democrat,FALSE,189765,690255,20171015,NA
+2016,Illinois,IL,17,33,21,US President,"Clinton, Hillary",democrat,FALSE,3090729,5536424,20171015,NA
+2016,Illinois,IL,17,33,21,US President,"Trump, Donald J.",republican,FALSE,2146015,5536424,20171015,NA
+2016,Indiana,IN,18,32,22,US President,"Trump, Donald J.",republican,FALSE,1557286,2734958,20171015,NA
+2016,Indiana,IN,18,32,22,US President,"Clinton, Hillary",democrat,FALSE,1033126,2734958,20171015,NA
+2016,Iowa,IA,19,42,31,US President,"Trump, Donald J.",republican,FALSE,800983,1565580,20171015,NA
+2016,Iowa,IA,19,42,31,US President,"Clinton, Hillary",democrat,FALSE,653669,1565580,20171015,NA
+2016,Kansas,KS,20,47,32,US President,"Trump, Donald J.",republican,FALSE,671018,1184402,20171015,NA
+2016,Kansas,KS,20,47,32,US President,"Clinton, Hillary",democrat,FALSE,427005,1184402,20171015,NA
+2016,Kentucky,KY,21,61,51,US President,"Trump, Donald J.",republican,FALSE,1202971,1924149,20171015,NA
+2016,Kentucky,KY,21,61,51,US President,"Clinton, Hillary",democrat,FALSE,628854,1924149,20171015,NA
+2016,Louisiana,LA,22,72,45,US President,"Trump, Donald J.",republican,FALSE,1178638,2029032,20171015,NA
+2016,Louisiana,LA,22,72,45,US President,"Clinton, Hillary",democrat,FALSE,780154,2029032,20171015,NA
+2016,Maine,ME,23,11,2,US President,"Clinton, Hillary",democrat,FALSE,357735,771892,20171015,NA
+2016,Maine,ME,23,11,2,US President,"Trump, Donald J.",republican,FALSE,335593,771892,20171015,NA
+2016,Maryland,MD,24,52,52,US President,"Clinton, Hillary",democrat,FALSE,1677928,2781446,20171015,NA
+2016,Maryland,MD,24,52,52,US President,"Trump, Donald J.",republican,FALSE,943169,2781446,20171015,NA
+2016,Massachusetts,MA,25,14,3,US President,"Clinton, Hillary",democrat,FALSE,1995196,3378821,20171015,NA
+2016,Massachusetts,MA,25,14,3,US President,"Trump, Donald J.",republican,FALSE,1090893,3378821,20171015,NA
+2016,Michigan,MI,26,34,23,US President,"Trump, Donald J.",republican,FALSE,2279543,4799284,20171015,NA
+2016,Michigan,MI,26,34,23,US President,"Clinton, Hillary",democrat,FALSE,2268839,4799284,20171015,NA
+2016,Minnesota,MN,27,41,33,US President,"Clinton, Hillary",democrat,FALSE,1367705,2944782,20171015,NA
+2016,Minnesota,MN,27,41,33,US President,"Trump, Donald J.",republican,FALSE,1322949,2944782,20171015,NA
+2016,Mississippi,MS,28,64,46,US President,"Trump, Donald J.",republican,FALSE,700714,1209357,20171015,NA
+2016,Mississippi,MS,28,64,46,US President,"Clinton, Hillary",democrat,FALSE,485131,1209357,20171015,NA
+2016,Missouri,MO,29,43,34,US President,"Trump, Donald J.",republican,FALSE,1594511,2808605,20171015,NA
+2016,Missouri,MO,29,43,34,US President,"Clinton, Hillary",democrat,FALSE,1071068,2808605,20171015,NA
+2016,Montana,MT,30,81,64,US President,"Trump, Donald J.",republican,FALSE,279240,494526,20171015,NA
+2016,Montana,MT,30,81,64,US President,"Clinton, Hillary",democrat,FALSE,177709,494526,20171015,NA
+2016,Nebraska,NE,31,46,35,US President,"Trump, Donald J.",republican,FALSE,495961,844227,20171015,NA
+2016,Nebraska,NE,31,46,35,US President,"Clinton, Hillary",democrat,FALSE,284494,844227,20171015,NA
+2016,Nevada,NV,32,88,65,US President,"Clinton, Hillary",democrat,FALSE,539260,1125385,20171015,NA
+2016,Nevada,NV,32,88,65,US President,"Trump, Donald J.",republican,FALSE,512058,1125385,20171015,NA
+2016,New Hampshire,NH,33,12,4,US President,"Clinton, Hillary",democrat,FALSE,348526,744296,20171015,NA
+2016,New Hampshire,NH,33,12,4,US President,"Trump, Donald J.",republican,FALSE,345790,744296,20171015,NA
+2016,New Jersey,NJ,34,22,12,US President,"Clinton, Hillary",democrat,FALSE,2148278,3874046,20171015,NA
+2016,New Jersey,NJ,34,22,12,US President,"Trump, Donald J.",republican,FALSE,1601933,3874046,20171015,NA
+2016,New Mexico,NM,35,85,66,US President,"Clinton, Hillary",democrat,FALSE,385234,798319,20171015,NA
+2016,New Mexico,NM,35,85,66,US President,"Trump, Donald J.",republican,FALSE,319667,798319,20171015,NA
+2016,New York,NY,36,21,13,US President,"Clinton, Hillary",democrat,FALSE,4379789,7802084,20171015,NA
+2016,New York,NY,36,21,13,US President,"Trump, Donald J.",republican,FALSE,2527142,7802084,20171015,NA
+2016,North Carolina,NC,37,56,47,US President,"Trump, Donald J.",republican,FALSE,2362631,4741564,20171015,NA
+2016,North Carolina,NC,37,56,47,US President,"Clinton, Hillary",democrat,FALSE,2189316,4741564,20171015,NA
+2016,North Dakota,ND,38,44,36,US President,"Trump, Donald J.",republican,FALSE,216794,344360,20171015,NA
+2016,North Dakota,ND,38,44,36,US President,"Clinton, Hillary",democrat,FALSE,93758,344360,20171015,NA
+2016,Ohio,OH,39,31,24,US President,"Trump, Donald J.",republican,FALSE,2841005,5496487,20171015,NA
+2016,Ohio,OH,39,31,24,US President,"Clinton, Hillary",democrat,FALSE,2394164,5496487,20171015,NA
+2016,Oklahoma,OK,40,73,53,US President,"Trump, Donald J.",republican,FALSE,949136,1452992,20171015,NA
+2016,Oklahoma,OK,40,73,53,US President,"Clinton, Hillary",democrat,FALSE,420375,1452992,20171015,NA
+2016,Oregon,OR,41,92,72,US President,"Clinton, Hillary",democrat,FALSE,1002106,2001336,20171015,NA
+2016,Oregon,OR,41,92,72,US President,"Trump, Donald J.",republican,FALSE,782403,2001336,20171015,NA
+2016,Pennsylvania,PA,42,23,14,US President,"Trump, Donald J.",republican,FALSE,2970733,6115402,20171015,NA
+2016,Pennsylvania,PA,42,23,14,US President,"Clinton, Hillary",democrat,FALSE,2926441,6115402,20171015,NA
+2016,Rhode Island,RI,44,15,5,US President,"Clinton, Hillary",democrat,FALSE,252525,464144,20171015,NA
+2016,Rhode Island,RI,44,15,5,US President,"Trump, Donald J.",republican,FALSE,180543,464144,20171015,NA
+2016,South Carolina,SC,45,57,48,US President,"Trump, Donald J.",republican,FALSE,1155389,2103027,20171015,NA
+2016,South Carolina,SC,45,57,48,US President,"Clinton, Hillary",democrat,FALSE,855373,2103027,20171015,NA
+2016,South Dakota,SD,46,45,37,US President,"Trump, Donald J.",republican,FALSE,227721,370093,20171015,NA
+2016,South Dakota,SD,46,45,37,US President,"Clinton, Hillary",democrat,FALSE,117458,370093,20171015,NA
+2016,Tennessee,TN,47,62,54,US President,"Trump, Donald J.",republican,FALSE,1522925,2508027,20171015,NA
+2016,Tennessee,TN,47,62,54,US President,"Clinton, Hillary",democrat,FALSE,870695,2508027,20171015,NA
+2016,Texas,TX,48,74,49,US President,"Trump, Donald J.",republican,FALSE,4685047,8969226,20171015,NA
+2016,Texas,TX,48,74,49,US President,"Clinton, Hillary",democrat,FALSE,3877868,8969226,20171015,NA
+2016,Utah,UT,49,87,67,US President,"Trump, Donald J.",republican,FALSE,515211,1131317,20171015,NA
+2016,Utah,UT,49,87,67,US President,"Clinton, Hillary",democrat,FALSE,310674,1131317,20171015,NA
+2016,Vermont,VT,50,13,6,US President,"Clinton, Hillary",democrat,FALSE,178573,320467,20171015,NA
+2016,Vermont,VT,50,13,6,US President,"Trump, Donald J.",republican,FALSE,95369,320467,20171015,NA
+2016,Virginia,VA,51,54,40,US President,"Clinton, Hillary",democrat,FALSE,1981473,3982752,20171015,NA
+2016,Virginia,VA,51,54,40,US President,"Trump, Donald J.",republican,FALSE,1769443,3982752,20171015,NA
+2016,Washington,WA,53,91,73,US President,"Clinton, Hillary",democrat,FALSE,1742718,3317019,20171015,NA
+2016,Washington,WA,53,91,73,US President,"Trump, Donald J.",republican,FALSE,1221747,3317019,20171015,NA
+2016,West Virginia,WV,54,55,56,US President,"Trump, Donald J.",republican,FALSE,489371,713051,20171015,NA
+2016,West Virginia,WV,54,55,56,US President,"Clinton, Hillary",democrat,FALSE,188794,713051,20171015,NA
+2016,Wisconsin,WI,55,35,25,US President,"Trump, Donald J.",republican,FALSE,1405284,2976150,20171015,NA
+2016,Wisconsin,WI,55,35,25,US President,"Clinton, Hillary",democrat,FALSE,1382536,2976150,20171015,NA
+2016,Wyoming,WY,56,83,68,US President,"Trump, Donald J.",republican,FALSE,174419,258788,20171015,NA
+2016,Wyoming,WY,56,83,68,US President,"Clinton, Hillary",democrat,FALSE,55973,258788,20171015,NA
