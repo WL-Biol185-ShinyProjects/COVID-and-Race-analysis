@@ -18,8 +18,6 @@ dashboardPage(
     tabItems(
       tabItem("Introduction", "Introduction goes here"),
       tabItem("CasesDeaths", casesanddeaths)
-      
-      
     )
   )
 )
