@@ -33,3 +33,7 @@ function(input, output) {
   
   
 }
+source("introduction.R")
+source("political-climate.R")
+source("data-explorer.R")
+source("demographics.R")
