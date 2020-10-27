@@ -1,5 +1,9 @@
 library(shinydashboard)
 #source pages here
+source("introduction.R")
+source("political-climate.R")
+source("data-explorer.R")
+source("demographics.R")
 source("cases-and-deaths.R")
 
 dashboardPage(
