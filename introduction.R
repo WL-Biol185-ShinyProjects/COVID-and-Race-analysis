@@ -11,9 +11,4 @@ tabItems(
             )
           )
   )
-<<<<<<< HEAD
 )  
-=======
-)
-
->>>>>>> 19ab17cbcfcbcb09b6c2aef8f2b8d21a96888e86
