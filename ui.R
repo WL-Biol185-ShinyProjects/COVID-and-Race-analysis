@@ -21,7 +21,7 @@ dashboardPage(
   ## Body content
   dashboardBody(
     tabItems(
-      tabItem("Introduction", "Include introduction here..."),
+      tabItem("Introduction", introductiontext),
       tabItem("CasesDeaths", casesanddeaths)
     )
   )
