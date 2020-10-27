@@ -21,7 +21,7 @@ dashboardPage(
   ## Body content
   dashboardBody(
     tabItems(
-      tabItem("Introduction", "Introduction goes here"),
+      tabItem("Introduction", includeMarkdown(introduction.md)),
       tabItem("CasesDeaths", casesanddeaths)
     )
   )
