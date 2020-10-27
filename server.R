@@ -2,6 +2,10 @@ library(shinydashboard)
 library(shiny)
 library(leaflet)
 
+source("introduction.R")
+source("political-climate.R")
+source("data-explorer.R")
+source("demographics.R")
 source("cases-and-deaths.R")
 
 # Define server logic required to plot various variables with COVID cases and deaths
@@ -33,7 +37,3 @@ function(input, output) {
   
   
 }
-source("introduction.R")
-source("political-climate.R")
-source("data-explorer.R")
-source("demographics.R")
