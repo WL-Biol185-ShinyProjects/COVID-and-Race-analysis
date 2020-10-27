@@ -1,7 +1,8 @@
 library(shiny)
 library(markdown)
 
-fluidrow(
+fluidRow(
   column(4,
-         includeMarkdown("introduction.md"))
+         includeMarkdown("introduction.md")
+)
 )
