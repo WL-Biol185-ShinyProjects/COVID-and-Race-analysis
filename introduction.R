@@ -3,7 +3,9 @@ library(markdown)
 
 introductiontext <-
   fluidRow(
-    column(4,
-         includeMarkdown("introduction.md")
+    box(
+      width = 12,
+      includeMarkdown("introduction.md"
+      )
   )
 )

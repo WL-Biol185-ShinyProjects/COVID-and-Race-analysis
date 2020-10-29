@@ -17,3 +17,4 @@ politicalclimate <-
       #from here on out, not too sure. Make sure to add back the comma on the line above.
       #sliderInput("datesforcases", "Date", min(casesOvertime$detection_date), max(casesOvertime$detection_date), value = min(casesOvertime$detection_date), animate = TRUE)
     )
+  )  
