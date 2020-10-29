@@ -10,7 +10,7 @@ source("cases-and-deaths.R")
 
 # Define server logic required to plot various variables with COVID cases and deaths
 function(input, output) {
-
+#This section is related to the cases and deaths tab
   output$CasesandDeathsOvertime <- renderLeaflet({
     filteredData <- filter(casesOvertime, detection_date == input$datesforcases)
     statesGeo <- rgdal::readOGR("states.geo.json")
@@ -34,6 +34,9 @@ function(input, output) {
                 title        = "Log of Total Cases"
       )
   })
-  
-  
+#this section is for the Political Climate tab
+  output$PoliticalClimateOvertime <- renderLeaflet({
+    data <- years[[input$year]]
+    leaflet(data)
+  })
 }
