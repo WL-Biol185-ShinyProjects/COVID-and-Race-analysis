@@ -23,7 +23,8 @@ dashboardPage(
     tabItems(
       tabItem("Introduction", introductiontext),
       tabItem("CasesDeaths", casesanddeaths),
-      tabItem("PoliticalClimate", politicalclimate)
+      tabItem("PoliticalClimate", politicalclimate),
+      tabItem("DataExplorer", dataexplorer)
     )
   )
 )
