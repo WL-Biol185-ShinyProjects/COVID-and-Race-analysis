@@ -34,7 +34,7 @@ function(input, output) {
                 title        = "Log of Total Cases"
       )
   })
-#this section is for the Political Climate tab
+#this section i s for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
     poliData <- years[[input$year]]
     countryMap <- rgdal::readOGR("states.geo.json")
