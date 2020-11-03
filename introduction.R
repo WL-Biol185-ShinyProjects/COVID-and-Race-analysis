@@ -6,26 +6,12 @@ introductiontext <-
             titlePanel("The Coronavirus Disease 2019 in the United States"),
             column(width = 5,
                    box(
-                     title = "", width = NULL, solidHeader = TRUE, status = "primary",
-                     "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia.
-                                     By March 2003, the World Health Organization released a global alert for this atypical, severe pneuomonia
-                                     of unknown origin, and the Center for Disease Control began to issue health alerts. 
-                                       SARS became the first major pandemic of the millenium. A novel coronavirus (named SARS-CoV) 
-                                       was determined to cause SARS. SARS-CoV has been found in the civet, a mammalian animal found 
-                                       in China, and horseshoe bats. Since 2004, there have not been any reported cases of SARS, 
-                                     but the disease has been watched for possible reemergence."
+                     title = "Background on the COVID-19 Pandemic", width = NULL, solidHeader = TRUE, status = "primary",
+                     "text goes here."
                    ),
                    box(
-                     title = "Relevance", width = NULL, solidHeader = TRUE, status = "primary",
-                     "Why are we concerned about a past epidemic? SARS is being watched closely for 
-                                     possible reemergence since it has not been completely eradicated. Pandemics of 
-                                     infectious diseases are predicted to only increase with globalization. Yet, globalization
-                                     also allowed for a more coordinated response to control SARS outbreaks. Data on the 2003 SARS
-                                     epidemic and global responses to the epidemic are an invaluable resource for coordinating global
-                                     responses to epidemics in the future. In 2012, SARS Co-V was declared a select agent, which means 
-                                     it could possibly pose severe threats to public health and safety. This means that SARS Co-V, and 
-                                     related coronaviruses, are potential candidates for bioterrorism. Studying the epidemiology of this
-                                     coronavirus is important in understanding the nature of infectious diseases as a whole."
+                     title = "Demographic Disparities in COVID-19", width = NULL, solidHeader = TRUE, status = "primary",
+                     "text goes here."
                    ),
                    box(title = "Links for More Information", width = NULL, background = "blue",
                        a("SARS Timeline (CDC)", href = "https://www.cdc.gov/about/history/sars/timeline.htm", style = "color:LightGray;"),
@@ -42,7 +28,7 @@ introductiontext <-
             ),
             
             
-            box(background = "blue", img(src = "SARSspreadResized.png",
+            box(background = "blue", img(src = "COVID19infographic.png",
                                          style = "display: block; margin-left: auto, margin-right: auto;"
             ), 
             
