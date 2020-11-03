@@ -42,6 +42,7 @@ function(input, output) {
 }
 
 #This section is for the Data Explorer Tab (related to total cases, deaths, hospitalizations etc based on each state)
+function(input, output) {
 output$DataExplorer <- renderLeaflet({
   filteredData <- filter(totalData, detection_date == input$datesforcases)
   select('state', 'tot_cases', 'tot_deaths')
@@ -65,5 +66,6 @@ output$DataExplorer <- renderLeaflet({
     dashArray = "",
     fillOpacity = 0.7,
     bringToFront = TRUE))
+  
 })
-
+}
