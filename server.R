@@ -47,7 +47,6 @@ function(input, output) {
 
   output$DataExplorer <- renderLeaflet({
     filteredData <- filter(totalData, detection_date == input$datesforcases)
-    select('state', 'tot_cases', 'tot_deaths')
     statesGeo <- rgdal::readOGR("states.geo.json")
     statesGeo@data <- left_join(statesGeo@data, filteredData, by = c("NAME" = "StateName"))
     M <- leaflet(states) %>%
