@@ -40,3 +40,30 @@ function(input, output) {
     leaflet(data)
   })
 }
+
+#This section is for the Data Explorer Tab (related to total cases, deaths, hospitalizations etc based on each state)
+output$DataExplorer <- renderLeaflet({
+  filteredData <- filter(totalData, detection_date == input$datesforcases)
+  select('state', 'tot_cases', 'tot_deaths')
+  statesGeo <- rgdal::readOGR("states.geo.json")
+  statesGeo@data <- left_join(statesGeo@data, filteredData, by = c("NAME" = "StateName"))
+  M <- leaflet(states) %>%
+    setView(-96, 37.8, 4) %>%
+    addProviderTiles("MapBox", options = providerTileOptions(
+    id = "mapbox.light",
+    accessToken = Sys.getenv('MAPBOX_ACCESS_TOKEN')))
+  M %>% addPolygons(
+    fillColor = ~pal(density),
+    weight = 2,
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.7,
+    highlight = highlightOptions(
+    weight = 5,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE))
+})
+
