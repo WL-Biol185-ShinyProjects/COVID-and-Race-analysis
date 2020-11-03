@@ -36,8 +36,10 @@ function(input, output) {
   })
 #this section is for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
-    data <- years[[input$year]]
-    leaflet(data)
+    poliData <- years[[input$year]]
+    countryMap <- rgdal::readOGR("states.geo.json")
+    countryMap@data <- left_join(countryMap@data, poliData, by = c("NAME" = "state"))
+    countryMapData$text <- paste(strong("State:"), poli16$state, br())
   })
 }
 
