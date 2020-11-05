@@ -51,7 +51,40 @@ function(input, output) {
     countryMap@data <- left_join(countryMap@data, poliData, by = c("NAME" = "state"))
   #leaflet goes here  
   })
-}
+
 
 
 #This section is for the Data Explorer Tab (related to total cases, deaths, hospitalizations etc based on each state)
+  output$DataExplorerPage <- renderLeaflet({
+    filteredCases <- filter(totalCases, max(submission_date) == input$datesforcases)
+    filteredDeaths <- filter(totalDeaths, max(submission_date) == input@datesfordeaths)
+    mergedData <- geo_join(filteredCases, filteredDeaths, statesGeo, "Total Cases", "Total Deaths", "State")
+    statesGeo <- rgdal::readOGR("states.geo.json")
+    statesGeo@data <- left_join(statesGeo@data, filteredCases, filteredDeaths, by = c("NAME" = "StateName"))
+    totalData$hover <- with(mergedData, paste(state, '<br>', "Total Cases", filteredCases, "<br>", "Total Deaths", filteredDeaths))
+    pale <- colorNumeric("Greens", domain=mergedData)
+  
+  popup <- paste("Total Statistics: ", as.character(mergedData))
+  
+  leaflet("dataexplorerpage") %>%
+    addTiles("CartoDB.Positron") %>%
+    setView(-98.483330, 38.712046, zoom = 4) %>% 
+    addPolygons(data = mergedData , 
+                fillColor = ~pale(mergedData), 
+                fillOpacity = 0.9, 
+                weight = 0.2, 
+                smoothFactor = 0.2,
+                highlight = highlightOptions(
+                  weight = 5,
+                  color = "#666",
+                  dashArray = "",
+                  fillOpacity = 0.7,
+                  bringToFront = TRUE),
+                label=popup,
+                labelOptions = labelOptions(
+                  style = list("font-weight" = "normal", padding = "3px 8px"),
+                  textsize = "15px",
+                  direction = "auto")) %>%
+  })
+}
+
