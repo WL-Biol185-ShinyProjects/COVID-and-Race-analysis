@@ -44,12 +44,23 @@ function(input, output) {
       theme(axis.text.x = element_text(angle = 0, hjust = 1))
   })
   
-  #this section i s for the Political Climate tab
+  #this section is for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
     poliData <- years[[input$electionyear]]
     countryMap <- rgdal::readOGR("states.geo.json")
     countryMap@data <- left_join(countryMap@data, poliData, by = c("NAME" = "state"))
-  #leaflet goes here  
+  #leaflet goes here
+  leaflet(countryMap) %>%
+    setView(-98.483330, 38.712046, 3) %>%
+    addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
+                opacity = 1.0, fillOpacity = 0.5,
+                fillColor = ~colorFactor(c("blue", "red"), nationwideGEO@data$party)(nationwideGEO@data$party),
+                highlightOptions = 
+                  highlightOptions(
+                    color = "white", 
+                    weight = 2, 
+                    bringToFront = TRUE),
+                #popup = nationwideGEO@data$popupText)
   })
 
 
