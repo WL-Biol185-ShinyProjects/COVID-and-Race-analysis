@@ -34,7 +34,17 @@ function(input, output) {
                 title        = "Log of Total Cases"
       )
   })
-#this section i s for the Political Climate tab
+#This section is for demographics
+  output$racePlot <- renderPlot({
+    COVIDsurveillancedata %>%
+      filter(areas == input$region) %>%
+      arrange(Incidence) %>%
+      ggplot(aes(Sex,Incidence, fill = Sex)) + 
+      geom_histogram(stat= "identity")+
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  }),
+  
+  #this section i s for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
     poliData <- years[[input$year]]
     countryMap <- rgdal::readOGR("states.geo.json")
