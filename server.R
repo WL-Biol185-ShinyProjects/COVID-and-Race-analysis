@@ -42,7 +42,7 @@ function(input, output) {
       ggplot(aes(Sex,Incidence, fill = Sex)) + 
       geom_histogram(stat= "identity")+
       theme(axis.text.x = element_text(angle = 0, hjust = 1))
-  }),
+  })
   
   #this section i s for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
