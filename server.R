@@ -35,15 +35,7 @@ function(input, output) {
       )
   })
 #This section is for demographics
-  output$racePlot <- renderPlot({
-    demographicsCOVIDdata %>%
-      filter(areas == input$region) %>%
-      arrange(pos_spec_dt) %>%
-      ggplot(aes(`Race and ethnicity (combined)`, pos_spec_dt, fill = `Race and ethnicity (combined)`)) + 
-      geom_histogram(stat= "identity")+
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
-  })
-  
+
   #this section is for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
     poliData <- years[[input$electionyear]]
@@ -61,6 +53,7 @@ function(input, output) {
                     weight = 2, 
                     bringToFront = TRUE),
                 #popup = nationwideGEO@data$popupText)
+    )
   })
 
 
@@ -95,7 +88,8 @@ function(input, output) {
                 labelOptions = labelOptions(
                   style = list("font-weight" = "normal", padding = "3px 8px"),
                   textsize = "15px",
-                  direction = "auto")) %>%
-  })
+                  direction = "auto"))
+    })
 }
+
 
