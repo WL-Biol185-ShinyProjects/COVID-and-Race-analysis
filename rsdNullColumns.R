@@ -5,3 +5,7 @@ CDCcovidData$current_status = NULL
 CDCcovidData$hosp_yn = NULL
 CDCcovidData$icu_yn = NULL
 CDCcovidData$medcond_yn = NULL
+
+
+saveRDS(CDCcovidData, file = "CDCcovidData.RDS")
+readRDS("CDCcovidData")
