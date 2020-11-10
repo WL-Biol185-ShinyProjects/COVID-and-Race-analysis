@@ -37,7 +37,7 @@ function(input, output) {
   #This section is for demographics
   output$racePlot <- renderPlot({
     demographicsCOVIDdata %>%
-      filter(areas == input$region) %>%
+      filter(areas == CDCcovidData$`Race and ethnicity (combined)`) %>%
       arrange(pos_spec_dt) %>%
       ggplot(aes(`Race and ethnicity (combined)`, pos_spec_dt, fill = `Race and ethnicity (combined)`)) + 
       geom_histogram(stat= "identity")+
