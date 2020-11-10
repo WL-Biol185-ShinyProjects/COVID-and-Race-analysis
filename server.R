@@ -49,17 +49,17 @@ function(input, output) {
     poliData <- years[[input$electionyear]]
     countryMap <- rgdal::readOGR("states.geo.json")
     countryMap@data <- left_join(countryMap@data, poliData, by = c("NAME" = "state"))
+    palette <- colorBin("Blues", domain = poli16$candidatevotes)
   #leaflet goes here
   leaflet(countryMap) %>%
     setView(-98.483330, 38.712046, 3) %>%
-    addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
-                opacity = 1.0, fillOpacity = 0.5,
-                fillColor = ~colorFactor(c("blue", "red"), nationwideGEO@data$party)(nationwideGEO@data$party),
-                highlightOptions = 
-                  highlightOptions(
-                    color = "white", 
-                    weight = 2, 
-                    bringToFront = TRUE),
+    addPolygons(
+      fillColor = ~palette(poli16),
+      weight = 2,
+      label = poli16$state,
+      opacity = 1,
+      color = "black",
+      fillOpacity = 0.7
                 #popup = nationwideGEO@data$popupText)
     )
   })
