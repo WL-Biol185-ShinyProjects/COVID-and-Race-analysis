@@ -6,10 +6,10 @@ demographicsCOVIDdata <- readRDS("CDCcovidData.RDS")
 
 demographics <- 
   fluidPage(
-    titlePanel("Case by Race"),
+    titlePanel("Cases by Race"),
     sidebarLayout(
       sidebarPanel(
-        selectInput("region", "Region:",
+        selectInput("race", "Race and Ethnicity:",
                     choices = unique(demographicsCOVIDdata$`Race and ethnicity (combined)`),
                     selected = 1)
       ),
@@ -20,4 +20,5 @@ demographics <-
       )
     )
   )
+
 
