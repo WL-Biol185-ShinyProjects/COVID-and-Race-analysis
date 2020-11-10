@@ -11,29 +11,53 @@ source("cases-and-deaths.R")
 # Define server logic required to plot various variables with COVID cases and deaths
 function(input, output) {
 #This section is related to the cases and deaths tab
-  output$CasesandDeathsOvertime <- renderLeaflet({
-    filteredData <- filter(casesOvertime, detection_date == input$datesforcases)
-    statesGeo <- rgdal::readOGR("states.geo.json")
-    statesGeo@data <- left_join(statesGeo@data, filteredData, by = c("NAME" = "StateName"))
-    palette <- colorBin("Greens", domain = log(casesOvertime$tot_cases))
-    leaflet(data = statesGeo) %>%
+  output$CasesOvertime <- renderLeaflet({
+    filteredcasesData <- filter(casesOvertime, detection_date == input$datesforcases)
+    statescasesGeo <- rgdal::readOGR("states.geo.json")
+    statescasesGeo@data <- left_join(statescasesGeo@data, filteredcasesData, by = c("NAME" = "StateName"))
+    casespalette <- colorBin("Greens", domain = log(casesOvertime$tot_cases))
+    leaflet(data = statescasesGeo) %>% 
       setView(-96, 37.8, 4) %>%
       addPolygons(
-        fillColor = ~palette(log(tot_cases)),
+        fillColor = ~casespalette(log(tot_cases)),
         weight = 2, #thickness around states
         #work on the label functionality
-        label = statesGeo@data$NAME,
+        label = statescasesGeo@data$NAME,
         opacity = 1, #statelines
         color = "black",
         fillOpacity = 0.7 #statepolygons
       ) %>%
       addLegend("bottomright",
-                pal          = palette, 
+                pal          = casespalette, 
                 values       = ~(log(tot_cases)), 
                 opacity      = 0.8,
                 title        = "Log of Total Cases"
       )
   })
+  output$DeathsOvertime <- renderLeaflet({
+    filtereddeathsData <- filter(deathsOvertime, detection_date == input$datesfordeaths)
+    statesdeathsGeo <- rgdal::readOGR("states.geo.json")
+    statesdeathsGeo@data <- left_join(statesdeathsGeo@data, filtereddeathsData, by = c("NAME" = "StateName"))
+    deathspalette <- colorBin("Greens", domain = log(deathsOvertime$tot_death))
+    leaflet(data = statesdeathsGeo) %>% 
+      setView(-96, 37.8, 4) %>%
+      addPolygons(
+        fillColor = ~deathspalette(log(tot_death)),
+        weight = 2, #thickness around states
+        #work on the label functionality
+        label = statesdeathsGeo@data$NAME,
+        opacity = 1, #statelines
+        color = "black",
+        fillOpacity = 0.7 #statepolygons
+      ) %>%
+      addLegend("bottomright",
+                pal          = deathspalette, 
+                values       = ~(log(tot_death)), 
+                opacity      = 0.8,
+                title        = "Log of Total Deaths"
+      )
+  })
+  
   #This section is for demographics
   output$racePlot <- renderPlot({
     demographicsCOVIDdata %>%
