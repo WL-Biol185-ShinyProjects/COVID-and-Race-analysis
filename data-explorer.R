@@ -18,5 +18,5 @@ totalDeaths <- left_join(totalDeaths, states, by = c("state" = "Abbreviation"))
 dataexplorer <- 
   fluidPage(
     width = 12,
-    leafletOutput("DataExplorer")
+    leafletOutput("DataExplorerPage")
   )
