@@ -34,8 +34,16 @@ function(input, output) {
                 title        = "Log of Total Cases"
       )
   })
-#This section is for demographics
-
+  #This section is for demographics
+  output$racePlot <- renderPlot({
+    demographicsCOVIDdata %>%
+      filter(areas == input$region) %>%
+      arrange(pos_spec_dt) %>%
+      ggplot(aes(`Race and ethnicity (combined)`, pos_spec_dt, fill = `Race and ethnicity (combined)`)) + 
+      geom_histogram(stat= "identity")+
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  })
+  
   #this section is for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
     poliData <- years[[input$electionyear]]
