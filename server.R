@@ -1,6 +1,7 @@
 library(shinydashboard)
 library(shiny)
 library(leaflet)
+library(ggplot2)
 
 source("introduction.R")
 source("political-climate.R")
@@ -58,14 +59,32 @@ function(input, output) {
       )
   })
   
-  #This section is for demographics
+  #This section is for DEMOGRAPHICS
+  #this is the plot on race
   output$racePlot <- renderPlot({
-    demographicsCOVIDdata %>%
-      arrange(pos_spec_dt) %>%
-      ggplot(aes(`Race and ethnicity (combined)`, pos_spec_dt, fill = `Race and ethnicity (combined)`)) + 
-      geom_histogram(stat= "identity")+
+    demographicsRaceData %>%
+      #how can i arrange the data by ethnicity in alpha order
+      ggplot(aes(`Race/Ethnicity`, Count, fill = `Race/Ethnicity`)) + 
+      geom_histogram(stat = "identity") +
       theme(axis.text.x = element_text(angle = 0, hjust = 1))
   })
+  
+  #this is the plot on sex
+  output$sexPlot <- renderPlot({
+    demographicsSexData %>%
+      ggplot(aes(Sex, Count, fill = Sex)) + 
+      geom_histogram(stat = "identity") +
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  })
+  
+  #this is the plot on age
+  output$agePlot <- renderPlot({
+    demographicsAgeData %>%
+      ggplot(aes(`Age Group`, Count, fill = `Age Group`)) + 
+      geom_histogram(stat = "identity") +
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  })
+  
   
   #this section is for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
