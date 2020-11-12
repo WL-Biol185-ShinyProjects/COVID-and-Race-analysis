@@ -2,21 +2,31 @@ library(shiny)
 library(leaflet)
 library(tidyverse)
 library(rgdal)
+library(lubridate)
 
-totalCases <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
-totalCases$detection_date <- as.Date(totalCases$submission_date, format = "%m/%d/%Y")
+cases <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
 states <- read_csv("states")
 colnames(states) <- c("StateName", "Abbreviation")
-totalCases <- left_join(totalCases, states, by = c("state" = "Abbreviation"))
+casesstates <- left_join(cases, states, by = c("state" = "Abbreviation"))
+cases$datescases <- as.Date(cases$submission_date, format = "%m/%d/%Y")
+uptodatecases <- cases %>% group_by(state) %>% 
+  filter(datescases == max(datescases))
+totalcasesdata = uptodatecases[,c ('state', 'tot_death')]
 
-totalDeaths <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
-totalDeaths$detection_date <- as.Date(totalDeaths$submission_date, format = "%m/%d/%Y")
+deaths <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
 states <- read_csv("states")
 colnames(states) <- c("StateName", "Abbreviation")
-totalDeaths <- left_join(totalDeaths, states, by = c("state" = "Abbreviation"))
+deathsstates <- left_join(deaths, states, by = c("state" = "Abbreviation"))
+deaths$datesdeaths <- as.Date(deaths$submission_date, format = "%m/%d/%Y")
+uptodatedeaths <- deaths %>% group_by(state) %>% 
+  filter(datesdeaths == max(datesdeaths))
+totaldeathsdata = uptodatedeaths[,c ('state', 'tot_death')]
 
-dataexplorer <- 
+dataexplorerpage <- 
   fluidPage(
-    width = 12,
-    leafletOutput("DataExplorerPage")
+    box(
+      titlePanel("Total Cases and Deaths in each State"),
+      width = 12,
+      leafletOutput("TotalDataExplorerPage")
+    )
   )
