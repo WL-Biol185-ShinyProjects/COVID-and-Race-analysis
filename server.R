@@ -82,12 +82,13 @@ function(input, output) {
                             off50  = (currentRows$candidatevotes[2] / currentRows$totalvotes[2]) - 0.5
                           )
                         })
-    
+    #binning colors
+    bins <- c(0, 0.2, 0.4, 0.6, 0.8, 1, Inf)
     statePoliData <- do.call(rbind, tableList)
     
     countryMap <- rgdal::readOGR("states.geo.json")
     countryMap@data <- left_join(countryMap@data, statePoliData, by = c("NAME" = "state"))
-    palette <- colorBin("RdBu", domain = statePoliData$off50)
+    palette <- colorBin("RdBu", domain = statePoliData$off50, bins = bins)
     #leaflet goes here
     leaflet(countryMap) %>%
       setView(-98.483330, 38.712046, 3) %>%
