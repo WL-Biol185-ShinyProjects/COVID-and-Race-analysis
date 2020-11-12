@@ -71,21 +71,35 @@ function(input, output) {
   #this section is for the Political Climate tab
   output$PoliticalClimateOvertime <- renderLeaflet({
     poliData <- years[[input$electionyear]]
+    
+    tableList <- lapply(seq(1, nrow(poliData), by = 2),
+                        function(rown) {
+                          currentRows <- poliData[c(rown, rown + 1), ]
+                          data.frame(
+                            state  = currentRows$state[1],
+                            pctRep = currentRows$candidatevotes[1] / currentRows$totalvotes[1],
+                            pctDem = currentRows$candidatevotes[2] / currentRows$totalvotes[2],
+                            off50  = (currentRows$candidatevotes[2] / currentRows$totalvotes[2]) - 0.5
+                          )
+                        })
+    
+    statePoliData <- do.call(rbind, tableList)
+    
     countryMap <- rgdal::readOGR("states.geo.json")
-    countryMap@data <- left_join(countryMap@data, poliData, by = c("NAME" = "state"))
-    palette <- colorBin("Blues", domain = poli16$candidatevotes)
-  #leaflet goes here
-  leaflet(countryMap) %>%
-    setView(-98.483330, 38.712046, 3) %>%
-    addPolygons(
-      fillColor = ~palette(poli16),
-      weight = 2,
-      label = poli16$state,
-      opacity = 1,
-      color = "black",
-      fillOpacity = 0.7
-                #popup = nationwideGEO@data$popupText)
-    )
+    countryMap@data <- left_join(countryMap@data, statePoliData, by = c("NAME" = "state"))
+    palette <- colorBin("RdBu", domain = statePoliData$off50)
+    #leaflet goes here
+    leaflet(countryMap) %>%
+      setView(-98.483330, 38.712046, 3) %>%
+      addPolygons(
+        fillColor = ~palette(off50),
+        weight = 2,
+        label = countryMap@data$state,
+        opacity = 1,
+        color = "black",
+        fillOpacity = 0.7
+        #popup = nationwideGEO@data$popupText)
+      )
   })
 
 
