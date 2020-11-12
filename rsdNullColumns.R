@@ -1,4 +1,4 @@
-CDCcovidData <- readRDS("COVIDsurveillancedata.RDS")
+
 CDCcovidData$cdc_report_dt = NULL
 CDCcovidData$onset_dt = NULL
 CDCcovidData$current_status = NULL
