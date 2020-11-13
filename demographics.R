@@ -13,10 +13,11 @@ demographicsAgeDeathsData <- read_csv("deaths_by_age_group.csv")
 
 demographics <- 
 fluidPage(
+  titlePanel("Cases and Deaths by Demographics"),
   fluidRow(
   tabBox(
     title = "Cases",
-    # The id lets us use input$tabset1 on the server to find the current tab
+    # The id lets us use input$tabset on the server to find the current tab
     id = "tabsetCases", height = "600px", width = 12,
     tabPanel("Race", plotOutput("raceCasesPlot")),
     tabPanel("Sex", plotOutput("sexCasesPlot")),
@@ -27,7 +28,6 @@ fluidPage(
   tabBox(
     title = "Deaths",
     id = "tabsetDeaths", height = "600px", width = 12,
-    selected = "Tab3",
     tabPanel("Race", plotOutput("raceDeathsPlot")),
     tabPanel("Sex", plotOutput("sexDeathsPlot")),
     tabPanel("Age", plotOutput("ageDeathsPlot"))
