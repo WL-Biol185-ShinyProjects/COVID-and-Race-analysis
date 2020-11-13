@@ -60,26 +60,57 @@ function(input, output) {
   })
   
   #This section is for DEMOGRAPHICS
-  #this is the plot on race
-  output$racePlot <- renderPlot({
-    demographicsRaceData %>%
+  #this is the plot on cases and race
+  output$tabsetCasesSelected <- renderText({
+    input$tabsetCases
+  })
+  output$tabsetDeathsSelected <- renderText({
+    input$tabsetDeaths
+  })
+  output$raceCasesPlot <- renderPlot({
+    demographicsRaceCasesData %>%
       #how can i arrange the data by ethnicity in alpha order
       ggplot(aes(`Race/Ethnicity`, Count, fill = `Race/Ethnicity`)) + 
       geom_histogram(stat = "identity") +
       theme(axis.text.x = element_text(angle = 0, hjust = 1))
   })
   
-  #this is the plot on sex
-  output$sexPlot <- renderPlot({
-    demographicsSexData %>%
+  #this is the plot on cases and sex
+  output$sexCasesPlot <- renderPlot({
+    demographicsSexCasesData %>%
       ggplot(aes(Sex, Count, fill = Sex)) + 
       geom_histogram(stat = "identity") +
       theme(axis.text.x = element_text(angle = 0, hjust = 1))
   })
   
-  #this is the plot on age
-  output$agePlot <- renderPlot({
-    demographicsAgeData %>%
+  #this is the plot on cases and age
+  output$ageCasesPlot <- renderPlot({
+    demographicsAgeCasesData %>%
+      ggplot(aes(`Age Group`, Count, fill = `Age Group`)) + 
+      geom_histogram(stat = "identity") +
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  })
+  
+  #this is the plot on Deaths and race
+  output$raceDeathsPlot <- renderPlot({
+    demographicsRaceDeathsData %>%
+      #how can i arrange the data by ethnicity in alpha order
+      ggplot(aes(`Race/Ethnicity`, Count, fill = `Race/Ethnicity`)) + 
+      geom_histogram(stat = "identity") +
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  })
+  
+  #this is the plot on deaths and sex
+  output$sexDeathsPlot <- renderPlot({
+    demographicsSexDeathsData %>%
+      ggplot(aes(Sex, Count, fill = Sex)) + 
+      geom_histogram(stat = "identity") +
+      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+  })
+  
+  #this is the plot on deaths and age
+  output$ageDeathsPlot <- renderPlot({
+    demographicsAgeDeathsData %>%
       ggplot(aes(`Age Group`, Count, fill = `Age Group`)) + 
       geom_histogram(stat = "identity") +
       theme(axis.text.x = element_text(angle = 0, hjust = 1))

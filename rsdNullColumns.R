@@ -28,3 +28,32 @@ demographics <- fluidPage(
     )
   )
 )
+
+
+
+fluidRow( 
+  box(
+    titlePanel("Cases by Race"),
+    plotOutput("raceCasesPlot")
+  ),
+  box(
+    titlePanel("Cases by Sex"),
+    plotOutput("sexCasesPlot")
+  ),
+  box(
+    titlePanel("Cases by Sex"),
+    plotOutput("ageCasesPlot")
+  ),
+  box(
+    titlePanel("Deaths by Race"),
+    plotOutput("raceDeathsPlot")
+  ),
+  box(
+    titlePanel("Deaths by Sex"),
+    plotOutput("sexDeathsPlot")
+  ),
+  box(
+    titlePanel("Deaths by Age"),
+    plotOutput("ageDeathsPlot")
+  )
+)
