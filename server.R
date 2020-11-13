@@ -177,21 +177,30 @@ function(input, output) {
 
 #This section is for the Data Explorer Tab (related to total cases an deaths based on each state)
   output$TotalDataExplorerPage <- renderLeaflet({
-    m <- leaflet(totalcasesdata) %>%
-      setView(-96, 37.8, 4) %>%
-      addProviderTiles("MapBox", options = providerTileOptions(
-        id = "mapbox.light",
-        accessToken = Sys.getenv('MAPBOX_ACCESS_TOKEN')))
-    bins <- c(0, 10, 20, 50, 100, 200, 500, 1000, Inf)
-    pal <- colorBin("YlOrRd", domain = uptodatecases$totalcasesdata, bins = bins)
+    
+    countryMap <- rgdal::readOGR("states.geo.json")
+    countryMap@data <- left_join(countryMap@data, 
+                                 totalcoviddata, 
+                                 by = c("NAME" = "StateName")
+    )
+    
+    m <- leaflet(countryMap) %>%
+      setView(-96, 37.8, 4)
+    
+    labels <- sprintf(
+      "<strong>%s<strong><br>Total cases: %s<br>Total deaths: %s",
+      countryMap@data$NAME, 
+      countryMap@data$tot_cases, 
+      countryMap@data$tot_death 
+    ) %>% lapply(HTML)
     
     m %>% addPolygons(
-      fillColor = ~pal(totalcasesdata),
       weight = 2,
       opacity = 1,
-      color = "white",
+      fill = "steelgrey",
       dashArray = "3",
       fillOpacity = 0.7,
+      label = labels,
       highlight = highlightOptions(
         weight = 5,
         color = "#666",
@@ -201,5 +210,3 @@ function(input, output) {
     
   })
 }
-
-
