@@ -124,38 +124,31 @@ function(input, output) {
 
 
 
-#This section is for the Data Explorer Tab (related to total cases, deaths, hospitalizations etc based on each state)
-  output$DataExplorerPage <- renderLeaflet({
-    filteredCases <- filter(totalCases, max(submission_date) == input$datesforcases)
-    filteredDeaths <- filter(totalDeaths, max(submission_date) == input@datesfordeaths)
-    mergedData <- geo_join(filteredCases, filteredDeaths, statesGeo, "Total Cases", "Total Deaths", "State")
-    statesGeo <- rgdal::readOGR("states.geo.json")
-    statesGeo@data <- left_join(statesGeo@data, filteredCases, filteredDeaths, by = c("NAME" = "StateName"))
-    totalData$hover <- with(mergedData, paste(state, '<br>', "Total Cases", filteredCases, "<br>", "Total Deaths", filteredDeaths))
-    pale <- colorNumeric("Greens", domain=mergedData)
-  
-  popup <- paste("Total Statistics: ", as.character(mergedData))
-  
-  leaflet("dataexplorerpage") %>%
-    addTiles("CartoDB.Positron") %>%
-    setView(-98.483330, 38.712046, zoom = 4) %>% 
-    addPolygons(data = mergedData , 
-                fillColor = ~pale(mergedData), 
-                fillOpacity = 0.9, 
-                weight = 0.2, 
-                smoothFactor = 0.2,
-                highlight = highlightOptions(
-                  weight = 5,
-                  color = "#666",
-                  dashArray = "",
-                  fillOpacity = 0.7,
-                  bringToFront = TRUE),
-                label=popup,
-                labelOptions = labelOptions(
-                  style = list("font-weight" = "normal", padding = "3px 8px"),
-                  textsize = "15px",
-                  direction = "auto"))
-    })
+#This section is for the Data Explorer Tab (related to total cases an deaths based on each state)
+  output$TotalDataExplorerPage <- renderLeaflet({
+    m <- leaflet(totalcasesdata) %>%
+      setView(-96, 37.8, 4) %>%
+      addProviderTiles("MapBox", options = providerTileOptions(
+        id = "mapbox.light",
+        accessToken = Sys.getenv('MAPBOX_ACCESS_TOKEN')))
+    bins <- c(0, 10, 20, 50, 100, 200, 500, 1000, Inf)
+    pal <- colorBin("YlOrRd", domain = uptodatecases$totalcasesdata, bins = bins)
+    
+    m %>% addPolygons(
+      fillColor = ~pal(totalcasesdata),
+      weight = 2,
+      opacity = 1,
+      color = "white",
+      dashArray = "3",
+      fillOpacity = 0.7,
+      highlight = highlightOptions(
+        weight = 5,
+        color = "#666",
+        dashArray = "",
+        fillOpacity = 0.7,
+        bringToFront = TRUE))
+    
+  })
 }
 
 
