@@ -26,8 +26,8 @@ dashboardPage(
       tabItem("Introduction", introductiontext, icon("flag-usa")),
       tabItem("CasesDeaths", casesanddeaths),
       tabItem("Demographics", demographics),
-      tabItem("PoliticalClimate", politicalclimate),
-      tabItem("DataExplorer", dataexplorer)
+      tabItem("PoliticalClimate", politicalclimate)
+      
     )
   ) 
 )  

@@ -68,52 +68,72 @@ function(input, output) {
     input$tabsetDeaths
   })
   output$raceCasesPlot <- renderPlot({
+    raceCasesSorted <- arrange(demographicsRaceCasesData, `Race/Ethnicity`)
+    raceCasesOrdered <- mutate(raceCasesSorted, `Race/Ethnicity` = factor(`Race/Ethnicity`, levels = `Race/Ethnicity`, ordered = TRUE))
     demographicsRaceCasesData %>%
-      #how can i arrange the data by ethnicity in alpha order
-      ggplot(aes(`Race/Ethnicity`, Count, fill = `Race/Ethnicity`)) + 
+      ggplot(aes(`Race/Ethnicity`, Percentage, fill = `Race/Ethnicity`)) + 
       geom_histogram(stat = "identity") +
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+      theme(axis.text.x = element_text(size = 11, angle = 60, hjust = 1)) +
+      theme(axis.text.y = element_text(size = 11, hjust = 1)) +
+      theme(axis.title.x = element_text(size = 14, face = "bold")) +
+      theme(axis.title.y = element_text(size = 12, face = "bold"))
   })
   
   #this is the plot on cases and sex
   output$sexCasesPlot <- renderPlot({
     demographicsSexCasesData %>%
-      ggplot(aes(Sex, Count, fill = Sex)) + 
+      ggplot(aes(Sex, Percentage, fill = Sex)) + 
       geom_histogram(stat = "identity") +
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+      theme(axis.text.x = element_text(size = 11, angle = 60, hjust = 1)) +
+      theme(axis.text.y = element_text(size = 11, hjust = 1)) +
+      theme(axis.title.x = element_text(size = 14, face = "bold")) +
+      theme(axis.title.y = element_text(size = 12, face = "bold"))
   })
   
   #this is the plot on cases and age
   output$ageCasesPlot <- renderPlot({
     demographicsAgeCasesData %>%
-      ggplot(aes(`Age Group`, Count, fill = `Age Group`)) + 
+      ggplot(aes(`Age Group`, Percentage, fill = `Age Group`)) + 
       geom_histogram(stat = "identity") +
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+      theme(axis.text.x = element_text(size = 11, angle = 60, hjust = 1)) +
+      theme(axis.text.y = element_text(size = 11, hjust = 1)) +
+      theme(axis.title.x = element_text(size = 14, face = "bold")) +
+      theme(axis.title.y = element_text(size = 12, face = "bold"))
   })
   
   #this is the plot on Deaths and race
   output$raceDeathsPlot <- renderPlot({
+    raceDeathsSorted <- arrange(demographicsRaceDeathsData, `Race/Ethnicity`)
+    raceDeathsOrdered <- mutate(raceDeathsSorted, `Race/Ethnicity` = factor(`Race/Ethnicity`, levels = `Race/Ethnicity`, ordered = TRUE))
     demographicsRaceDeathsData %>%
-      #how can i arrange the data by ethnicity in alpha order
-      ggplot(aes(`Race/Ethnicity`, Count, fill = `Race/Ethnicity`)) + 
+      ggplot(aes(`Race/Ethnicity`, Percentage, fill = `Race/Ethnicity`)) + 
       geom_histogram(stat = "identity") +
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+      theme(axis.text.x = element_text(size = 11, angle = 60, hjust = 1)) +
+      theme(axis.text.y = element_text(size = 11, hjust = 1)) +
+      theme(axis.title.x = element_text(size = 14, face = "bold")) +
+      theme(axis.title.y = element_text(size = 12, face = "bold"))
   })
   
   #this is the plot on deaths and sex
   output$sexDeathsPlot <- renderPlot({
     demographicsSexDeathsData %>%
-      ggplot(aes(Sex, Count, fill = Sex)) + 
+      ggplot(aes(Sex, Percentage, fill = Sex)) + 
       geom_histogram(stat = "identity") +
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+      theme(axis.text.x = element_text(size = 11, angle = 60, hjust = 1)) +
+      theme(axis.text.y = element_text(size = 11, hjust = 1)) +
+      theme(axis.title.x = element_text(size = 14, face = "bold")) +
+      theme(axis.title.y = element_text(size = 12, face = "bold"))
   })
   
   #this is the plot on deaths and age
   output$ageDeathsPlot <- renderPlot({
     demographicsAgeDeathsData %>%
-      ggplot(aes(`Age Group`, Count, fill = `Age Group`)) + 
+      ggplot(aes(`Age Group`, Percentage, fill = `Age Group`)) + 
       geom_histogram(stat = "identity") +
-      theme(axis.text.x = element_text(angle = 0, hjust = 1))
+      theme(axis.text.x = element_text(size = 11, angle = 60, hjust = 1)) +
+      theme(axis.text.y = element_text(size = 11, hjust = 1)) +
+      theme(axis.title.x = element_text(size = 14, face = "bold")) +
+      theme(axis.title.y = element_text(size = 12, face = "bold"))
   })
   
   

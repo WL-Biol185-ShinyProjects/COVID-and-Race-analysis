@@ -6,7 +6,7 @@ library(tidyverse)
 demographicsRaceCasesData <- read_csv("cases_by_race_ethnicity__all_age_groups.csv")
 demographicsSexCasesData <- read_csv("cases_by_sex__all_age_groups.csv")
 demographicsAgeCasesData <- read_csv("cases_by_age_group.csv")
-demographicsRaceDeathsData <- read_csv("deaths_by_race_ethnicity__all_age_groups (2).csv")
+demographicsRaceDeathsData <- read_csv("deaths_by_race_ethnicity__all_age_groups.csv")
 demographicsSexDeathsData <- read_csv("deaths_by_sex__all_age_groups.csv")
 demographicsAgeDeathsData <- read_csv("deaths_by_age_group.csv")
 

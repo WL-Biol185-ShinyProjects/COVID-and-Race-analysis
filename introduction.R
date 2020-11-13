@@ -29,7 +29,7 @@ introductiontext <-
             ),
             
             
-            box(background = "blue", img(src = "COVID19infographic.png",
+            box(background = "purple", img(src = "COVID19infographic.png",
                                          style = "display: block; margin-left: auto, margin-right: auto;"
             ), 
             
