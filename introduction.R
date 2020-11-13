@@ -14,7 +14,7 @@ introductiontext <-
                      title = "Demographic Disparities in COVID-19", width = NULL, solidHeader = TRUE, status = "primary",
                      "text goes here."
                    ),
-                   box(title = "Links for More Information", width = NULL, background = "blue",
+                   box(title = "Links for More Information", width = NULL, background = "purple",
                        a("SARS Timeline (CDC)", href = "https://www.cdc.gov/about/history/sars/timeline.htm", style = "color:LightGray;"),
                        br(),
                        a("SARS Information (CDC)", href = "https://www.cdc.gov/sars/index.html", style = "color:LightGray;"),
