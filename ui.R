@@ -27,7 +27,7 @@ dashboardPage(
       tabItem("CasesDeaths", casesanddeaths),
       tabItem("Demographics", demographics),
       tabItem("PoliticalClimate", politicalclimate),
-      tabItem("DataExplorerPage", dataexplorer)
+      tabItem("DataExplorer", dataexplorerpage)
       
     )
   ) 
