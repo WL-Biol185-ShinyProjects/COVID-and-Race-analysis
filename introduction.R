@@ -6,11 +6,11 @@ introductiontext <-
           fluidPage(
             titlePanel("The Coronavirus Disease 2019 in the United States"),
             column(width = 5,
-                   box(
+                   box(background = "purple",
                      title = "Background on the COVID-19 Pandemic", width = NULL, solidHeader = TRUE, status = "primary",
                      "text goes here."
                    ),
-                   box(
+                   box(background = "purple",
                      title = "Demographic Disparities in COVID-19", width = NULL, solidHeader = TRUE, status = "primary",
                      "text goes here."
                    ),
@@ -29,7 +29,7 @@ introductiontext <-
             ),
             
             
-            box(background = "purple", img(src = "COVID19infographic.png",
+            box(background = "purple", img(src = "COVID19infographic.png",  height="50%", width="50%", align = "middle",
                                          style = "display: block; margin-left: auto, margin-right: auto;"
             ), 
             
