@@ -16,7 +16,7 @@ function(input, output) {
     filteredcasesData <- filter(casesOvertime, detection_date == input$datesforcases)
     statescasesGeo <- rgdal::readOGR("states.geo.json")
     statescasesGeo@data <- left_join(statescasesGeo@data, filteredcasesData, by = c("NAME" = "StateName"))
-    casespalette <- colorBin("Greens", domain = log(casesOvertime$tot_cases))
+    casespalette <- colorBin("Purples", domain = log(casesOvertime$tot_cases))
     leaflet(data = statescasesGeo) %>% 
       setView(-96, 37.8, 4) %>%
       addPolygons(
@@ -39,7 +39,7 @@ function(input, output) {
     filtereddeathsData <- filter(deathsOvertime, detection_date == input$datesfordeaths)
     statesdeathsGeo <- rgdal::readOGR("states.geo.json")
     statesdeathsGeo@data <- left_join(statesdeathsGeo@data, filtereddeathsData, by = c("NAME" = "StateName"))
-    deathspalette <- colorBin("Greens", domain = log(deathsOvertime$tot_death))
+    deathspalette <- colorBin("Purples", domain = log(deathsOvertime$tot_death))
     leaflet(data = statesdeathsGeo) %>% 
       setView(-96, 37.8, 4) %>%
       addPolygons(
@@ -197,12 +197,12 @@ function(input, output) {
     m %>% addPolygons(
       weight = 2,
       opacity = 1,
-      fill = "steelgrey",
-      dashArray = "3",
+      fillColor = "mediumpurple",
+      dashArray = "1",
       fillOpacity = 0.7,
       label = labels,
       highlight = highlightOptions(
-        weight = 5,
+        weight = 3,
         color = "#666",
         dashArray = "",
         fillOpacity = 0.7,
