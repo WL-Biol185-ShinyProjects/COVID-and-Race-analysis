@@ -19,11 +19,14 @@ casesanddeaths <-
   fluidRow(
     box(
       titlePanel("Timeline of COVID-19 Cases"),
-       width = 12,
+      "The progression of COVID-19 cases in the United States from January 22, 2020 to October 5, 2020 using a log2 scale to visualize the large changes in values.",
+      width = 12,
       leafletOutput("CasesOvertime"),
       sliderInput("datesforcases", "Date", min(casesOvertime$detection_date), max(casesOvertime$detection_date), value = min(casesOvertime$detection_date), animate = TRUE),
+    
       box(
-        titlePanel("Timeline of COVID-19 Deaths"),
+        titlePanel("Timeline of COVID-19 Deaths"), 
+        "The progression of COVID-19 deaths in the United States from January 22, 2020 to October 5, 2020 using a log2 scale to visualize the large changes in values.",
         width = 12,
         leafletOutput("DeathsOvertime"),
         sliderInput("datesfordeaths", "Date", min(deathsOvertime$detection_date), max(deathsOvertime$detection_date), value = min(deathsOvertime$detection_date), animate = TRUE)
