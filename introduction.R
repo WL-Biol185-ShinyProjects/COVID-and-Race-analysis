@@ -5,40 +5,54 @@ library(markdown)
 introductiontext <-
   fluidRow(
     titlePanel("The Coronavirus Disease 2019 in the United States"),
-    column(width = 5,
+    column(width = 6,
            box(
              title = "Background on the COVID-19 Pandemic", width = NULL, background = "purple",
-             "Since the initial outbreak of the COVID-19 disease in Wuhan, Hubei Province, China in December 2019, the virus has rapidly spread across the globe (Coronavirus disease (COVID-19) n.d.). As of November 11th, 2020 there are 10,170,846 cases in the United States and 51 million worldwide (CDC 2020b; WHO Coronavirus Disease (COVID-19) Dashboard n.d.). However, in the past few decades, COVID-19 is not the first disease to be caused by zoonotic coronaviruses. In 2002, an episode of severe respiratory disease emerged and scientists determined that the etiological agent of severe acute respiratory syndromes (SARS) is SARS coronavirus (SARS-CoV) – a member of the Severe acute respiratory syndrome-related coronavirus species. Both the SARS epidemic of 2002 and the Middle East respiratory syndrome coronavirus were associated with upper respiratory tract infections. Thus when multiple cases of pneumonia like symptoms emerged in December, the causative agent was identified as the coronavirus 2019-nCoV. Based on its genetic resemblance to SARS-CoV and a number of other SARS-like animal coronaviruses, the novel coronavirus that causes COVID-19 was identified as SARS-CoV-2 (Morty and Ziebuhr 2020).
-                      Clinical evidence suggests that the primary mode of infection with SARS-CoV-2 is through exposure to infectious respiratory droplets. Infection through respiratory viruses can happen through direct transmission, droplet transmission, and airborne transmission. Droplet transmission is defined as infection through exposure to respiratory droplets from a contagious person who is within six feet of distance.  Airborne transmission is infection from smaller respiratory droplets and particles that can remain in the air for extended periods of time (CDC 2020a)."
+             "Since the initial outbreak of the COVID-19 disease in Wuhan, Hubei Province, 
+             China in December 2019, the virus has rapidly spread across the globe. 
+             As of November 11th, 2020 there are 10,170,846 cases in the United 
+             States and 51 million worldwide. However, in the past few decades, COVID-19 
+             is not the first disease to be caused by zoonotic coronaviruses. In 2002, an 
+             episode of severe respiratory disease emerged and scientists determined that 
+             the etiological agent of severe acute respiratory syndromes (SARS) is SARS coronavirus 
+             (SARS-CoV) – a member of the Severe acute respiratory syndrome-related coronavirus species. 
+             Both the SARS epidemic of 2002 and the Middle East respiratory syndrome coronavirus were 
+             associated with upper respiratory tract infections. Thus when multiple cases of pneumonia 
+             like symptoms emerged in December, the causative agent was identified as the coronavirus 
+             2019-nCoV. Based on its genetic resemblance to SARS-CoV and a number of other SARS-like 
+             animal coronaviruses, the novel coronavirus that causes COVID-19 was identified as SARS-CoV-2.
+            Clinical evidence suggests that the primary mode of infection with SARS-CoV-2 is through 
+             exposure to infectious respiratory droplets. Infection through respiratory viruses can 
+             happen through direct transmission, droplet transmission, and airborne transmission. 
+             Droplet transmission is defined as infection through exposure to respiratory droplets 
+             from a contagious person who is within six feet of distance.  Airborne transmission is 
+             infection from smaller respiratory droplets and particles that can remain in the air 
+             for extended periods of time."
            ),
            box(
-             title = "Relevance", width = NULL, background = "purple",
-             "Why are we concerned about a past epidemic? SARS is being watched closely for 
-                                     possible reemergence since it has not been completely eradicated. Pandemics of 
-                                     infectious diseases are predicted to only increase with globalization. Yet, globalization
-                                     also allowed for a more coordinated response to control SARS outbreaks. Data on the 2003 SARS
-                                     epidemic and global responses to the epidemic are an invaluable resource for coordinating global
-                                     responses to epidemics in the future. In 2012, SARS Co-V was declared a select agent, which means 
-                                     it could possibly pose severe threats to public health and safety. This means that SARS Co-V, and 
-                                     related coronaviruses, are potential candidates for bioterrorism. Studying the epidemiology of this
-                                     coronavirus is important in understanding the nature of infectious diseases as a whole."
+             title = "Demographic Disparities in COVID-19 Cases and Deaths", width = NULL, background = "purple",
+             "Race and ethnicity are risks for higher chance of disease and for other underlying 
+             conditions that impact health such as, socioeconomic status, access to health case, 
+             and increased exposure to COVID-19 due to occupation. Jobs that increase exposure 
+             include frontline works like doctors or nurses, essential workers, and infrastructure 
+             workers. Black people have a ratio that is 2.6x higher than white persons of being infected with SARS-CoV-2, including a 4.7x higher ratio of 
+             being hospitalized, and 2.1x higher ratio of death. Additionally, Hispanic or Latinos have a ratio that is 2.8x higher 
+             than white persons for cases, 4.6x higher for hospitalizations, and 1.1x higher for deaths."
            ),
            box(title = "Links for More Information", width = NULL, background = "purple",
-               a("SARS Timeline (CDC)", href = "https://www.cdc.gov/about/history/sars/timeline.htm", style = "color:LightGray;"),
+               a("COVID-19 Information (World Health Organization)", href = "https://www.who.int/news-room/q-a-detail/coronaviruse-disease-covid-19", style = "color:LightGray;"),
                br(),
-               a("SARS Information (CDC)", href = "https://www.cdc.gov/sars/index.html", style = "color:LightGray;"),
+               a("SARS-CoV-2 Transmission", href = "https://www.cdc.gov/coronavirus/2019-ncov/more/scientific-brief-sars-cov-2.html", style = "color:LightGray;"),
                br(),
-               a("SARS Information and Reports (WHO)", href = "https://www.who.int/csr/sars/en/", style = "color:LightGray;"),
+               a("COVID-19 Cases and Deaths by Race", href = "https://www.cdc.gov/coronavirus/2019-ncov/covid-data/investigations-discovery/hospitalization-death-by-race-ethnicity.html", style = "color:LightGray;"),
                br(),
-               a("SARS-CoV as an Agent of Emerging and Reemerging Infection", href = "https://cmr.asm.org/content/20/4/660", style = "color:LightGray;"),
+               a("COVID-19 Cases Dashboard (CDC)", href = "https://covid.cdc.gov/covid-data-tracker", style = "color:LightGray;"),
                br(),
-               a("Learning from SARS: Preparing for the Next Disease Outbreak", href = "https://www.ncbi.nlm.nih.gov/books/NBK92458/", style = "color:LightGray;"),
-               br(),
-               a("Possible Bioweapons", href = "https://www.ncbi.nlm.nih.gov/pubmed/14703130", style = "color:LightGray;"))
+               a("COVID-19 Cases Dashboard (World Health Organization)", href = "https://covid19.who.int", style = "color:LightGray;"))
     ),
     
     
-    box(background = "purple", img(src = "COVID19infographic.png",
+    img(src = "COVID19infographic.png",
                                    height="25%", width="50%",
                                    align = "middle",
                                    style="display: block; margin-left: auto; margin-right: auto;",
@@ -46,4 +60,3 @@ introductiontext <-
     h5()
     )
   )
-)

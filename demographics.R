@@ -19,18 +19,18 @@ fluidPage(
     title = "Cases",
     # The id lets us use input$tabset on the server to find the current tab
     id = "tabsetCases", height = "600px", width = 12,
-    tabPanel("Race", plotOutput("raceCasesPlot")),
-    tabPanel("Sex", plotOutput("sexCasesPlot")),
-    tabPanel("Age", plotOutput("ageCasesPlot"))
+    tabPanel("Race", plotOutput("raceCasesPlot"), "Cases in the United States based on Race/Ethnicity. Data represents 4,016,436 cases (52% of total cases). Data updated November 12 2020. Source: https://covid.cdc.gov/covid-data-tracker/#demographics."),
+    tabPanel("Sex", plotOutput("sexCasesPlot"), "Cases in the United States based on Sex. Data represents 7,493,562 cases (98% of total cases). Data updated November 12 2020. Source: https://covid.cdc.gov/covid-data-tracker/#demographics."),
+    tabPanel("Age", plotOutput("ageCasesPlot"), "Cases in the United States based on Age. Data represents 7,565,440 cases (99% of total cases). Data updated November 12 2020. Source: https://covid.cdc.gov/covid-data-tracker/#demographics.")
   )
 ),
   fluidRow(
   tabBox(
     title = "Deaths",
     id = "tabsetDeaths", height = "600px", width = 12,
-    tabPanel("Race", plotOutput("raceDeathsPlot")),
-    tabPanel("Sex", plotOutput("sexDeathsPlot")),
-    tabPanel("Age", plotOutput("ageDeathsPlot"))
+    tabPanel("Race", plotOutput("raceDeathsPlot"), "Deaths in the United States based on Race/Ethnicity. Data represents 142,525 cases (80% of total deaths). Data updated November 12 2020. Source: https://covid.cdc.gov/covid-data-tracker/#demographics."),
+    tabPanel("Sex", plotOutput("sexDeathsPlot"), "Deaths in the United States based on Sex. Data represents 176,151 deaths (99% of total deaths). Data updated November 12 2020. Source: https://covid.cdc.gov/covid-data-tracker/#demographics."),
+    tabPanel("Age", plotOutput("ageDeathsPlot"), "Deaths in the United States based on Age. Data represents 176,610 deaths (99% of total deaths). Data updated November 12 2020. Source: https://covid.cdc.gov/covid-data-tracker/#demographics.")
     )
   )
 )
