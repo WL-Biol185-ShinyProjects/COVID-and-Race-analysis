@@ -153,7 +153,7 @@ function(input, output) {
                         })
     #binning colors
     #bins <- c(-1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0)
-    bins <- c(-1, -.25, -.05, 0.6, .1, .3)
+    bins <- c(-1, -.25, -.2, -.1, -.05, -.005, 0, .015, 0.05, .3)
     statePoliData <- do.call(rbind, tableList)
     
     countryMap <- rgdal::readOGR("states.geo.json")
