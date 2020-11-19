@@ -155,7 +155,7 @@ function(input, output) {
     #bins <- c(-1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0)
     bins <- c(-1, -.25, -.2, -.1, -.05, -.005, 0, .005, 0.05, .3)
     statePoliData <- do.call(rbind, tableList)
-    
+    stateLocations <- read.csv("state-locations.csv")
     countryMap <- rgdal::readOGR("states.geo.json")
     countryMap@data <- left_join(countryMap@data, statePoliData, by = c("NAME" = "state"))
     palette <- colorBin("RdBu", domain = statePoliData$off50, bins = bins)
@@ -170,7 +170,9 @@ function(input, output) {
         color = "black",
         fillOpacity = 0.7
         #popup = nationwideGEO@data$popupText)
-      )
+      ) %>%
+    addCircles(data = stateLocations, radius = 5)
+    #later, make ~columnName
   })
 
 
