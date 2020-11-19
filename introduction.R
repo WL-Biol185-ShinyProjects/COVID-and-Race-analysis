@@ -3,7 +3,7 @@ library(shinydashboard)
 library(markdown)
 
 introductiontext <-
-  fluidRow(
+  fluidPage(
     titlePanel("The Coronavirus Disease 2019 in the United States"),
     column(width = 6,
            box(
