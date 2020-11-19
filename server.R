@@ -152,17 +152,21 @@ function(input, output) {
                           )
                         })
     #binning colors
-    bins <- c(-1, -.25, -.2, -.1, -.05, -.005, 0, .005, 0.05, .3)
-    statePoliData <- do.call(rbind, tableList)
-    stateLocations <- read.csv("state-locations.csv")
+    bins             <- c(-1, -.25, -.2, -.1, -.05, -.005, 0, .005, 0.05, .3)
+    statePoliData    <- do.call(rbind, tableList)
+    stateLocations   <- read.csv("state-locations.csv")
+    statePopulations <- read.csv("state_pop.csv")
     #gathering totals for the circles
-    caseData <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
+    caseData      <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
     casesObserved <- caseData %>% filter(submission_date == "10/5/2020" & state != "RMI" & state != "VI" & state != "NYC" & state != "AS" & state != "GU" & state != "FSM" & state != "PW" & state != "MP")
-    stateCases <- stateLocations %>% left_join(casesObserved, by = "state")
-    
-    countryMap <- rgdal::readOGR("states.geo.json")
+    stateCases    <- stateLocations %>% left_join(casesObserved, by = "state") %>%
+                     left_join(statePopulations, by = "name") %>%
+                     mutate(prop_cases = (tot_cases/Population)) #trying to mutate to get proportional values
+
+    #joining data for countryMap
+    countryMap      <- rgdal::readOGR("states.geo.json")
     countryMap@data <- left_join(countryMap@data, statePoliData, by = c("NAME" = "state"))
-    palette <- colorBin("RdBu", domain = statePoliData$off50, bins = bins)
+    palette         <- colorBin("RdBu", domain = statePoliData$off50, bins = bins)
     #leaflet goes here
     leaflet(countryMap) %>%
       setView(-98.483330, 38.712046, 3) %>%
@@ -175,8 +179,7 @@ function(input, output) {
         fillOpacity = 0.7
         #popup = nationwideGEO@data$popupText)
       ) %>%
-    addCircles(data = stateCases, radius = ~tot_cases)
-    #later, make ~columnName
+    addCircles(data = stateCases, radius = ~prop_cases)
   })
 
 
