@@ -28,7 +28,7 @@ dashboardPage(
       tabItem("Demographics", demographics),
       tabItem("PoliticalClimate", politicalclimate),
       tabItem("DataExplorer", dataexplorerpage)
-      
+    
     )
   ) 
 )  

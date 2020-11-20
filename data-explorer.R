@@ -25,6 +25,6 @@ dataexplorerpage <-
       titlePanel("Total Cases and Deaths in each State"),
       width = 12,
       leafletOutput("TotalDataExplorerPage"),
-      "The total amount of cases and deaths in each state as of October 5, 2020"
+      "The total amount of cases and deaths in each state as of October 5, 2020."
     )
   )
