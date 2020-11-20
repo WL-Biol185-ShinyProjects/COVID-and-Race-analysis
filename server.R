@@ -155,14 +155,14 @@ function(input, output) {
     bins             <- c(-1, -.25, -.2, -.1, -.05, -.005, 0, .005, 0.05, .3)
     statePoliData    <- do.call(rbind, tableList)
     stateLocations   <- read.csv("state-locations.csv")
-    statePopulations <- read.csv("state_pop.csv")
+    statePopulations <- read.csv("state_pop.csv", stringsAsFactors = FALSE)
     #gathering totals for the circles
     caseData      <- read_csv("United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv")
     casesObserved <- caseData %>% filter(submission_date == "10/5/2020" & state != "RMI" & state != "VI" & state != "NYC" & state != "AS" & state != "GU" & state != "FSM" & state != "PW" & state != "MP")
     stateCases    <- stateLocations %>% left_join(casesObserved, by = "state") %>%
                      left_join(statePopulations, by = "name") %>%
-                     mutate(prop_cases = (tot_cases/Population)) #trying to mutate to get proportional values
-
+                     mutate(prop_cases = 8000000 * (tot_cases/as.numeric(as.character(Population)))) #trying to mutate to get proportional values
+    
     #joining data for countryMap
     countryMap      <- rgdal::readOGR("states.geo.json")
     countryMap@data <- left_join(countryMap@data, statePoliData, by = c("NAME" = "state"))
