@@ -23,7 +23,7 @@ dashboardPage(
   ## Body content
   dashboardBody(
     tabItems(
-      tabItem("Introduction", introductiontext, icon("flag-usa")),
+      tabItem("Introduction", introductiontext),
       tabItem("CasesDeaths", casesanddeaths),
       tabItem("Demographics", demographics),
       tabItem("PoliticalClimate", politicalclimate),
