@@ -9,7 +9,7 @@ source("cases-and-deaths.R")
 
 dashboardPage(
   dashboardHeader(title = "COVID-19 Case & Deaths: An Analysis of Political & Social Factors ", 
-                  titleWidth = 700),
+                  titleWidth = 625),
   skin = "purple",
   dashboardSidebar(
     sidebarMenu(
